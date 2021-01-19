@@ -57,32 +57,32 @@ class StringLiteralFormatterTest extends TestCase
     }
 
     /**
-     * @covers \GraphQL\Util\StringLiteralFormatter::formatArrayForGQLQuery
+     * @covers \GraphQL\Util\StringLiteralFormatter::formatArrayForGQLModule
      */
-    public function testFormatArrayForGQLQuery()
+    public function testFormatArrayForGQLModule()
     {
         $emptyArray = [];
-        $stringArray = StringLiteralFormatter::formatArrayForGQLQuery($emptyArray);
+        $stringArray = StringLiteralFormatter::formatArrayForGQLModule($emptyArray);
         $this->assertEquals('[]', $stringArray);
 
         $oneValueArray = [1];
-        $stringArray = StringLiteralFormatter::formatArrayForGQLQuery($oneValueArray);
+        $stringArray = StringLiteralFormatter::formatArrayForGQLModule($oneValueArray);
         $this->assertEquals('[1]', $stringArray);
 
         $twoValueArray = [1, 2];
-        $stringArray = StringLiteralFormatter::formatArrayForGQLQuery($twoValueArray);
+        $stringArray = StringLiteralFormatter::formatArrayForGQLModule($twoValueArray);
         $this->assertEquals('[1, 2]', $stringArray);
 
         $stringArray = ['one', 'two'];
-        $stringArray = StringLiteralFormatter::formatArrayForGQLQuery($stringArray);
+        $stringArray = StringLiteralFormatter::formatArrayForGQLModule($stringArray);
         $this->assertEquals('["one", "two"]', $stringArray);
 
         $booleanArray = [true, false];
-        $stringArray = StringLiteralFormatter::formatArrayForGQLQuery($booleanArray);
+        $stringArray = StringLiteralFormatter::formatArrayForGQLModule($booleanArray);
         $this->assertEquals('[true, false]', $stringArray);
 
         $floatArray = [1.1, 2.2];
-        $stringArray = StringLiteralFormatter::formatArrayForGQLQuery($floatArray);
+        $stringArray = StringLiteralFormatter::formatArrayForGQLModule($floatArray);
         $this->assertEquals('[1.1, 2.2]', $stringArray);
     }
 

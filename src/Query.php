@@ -219,7 +219,7 @@ class Query extends NestableObject
                 $value = StringLiteralFormatter::formatValueForRHS($value);
             } elseif (is_array($value)) {
                 // Convert PHP array to its array representation in graphql arguments
-                $value = StringLiteralFormatter::formatArrayForGQLQuery($value);
+                $value = StringLiteralFormatter::formatArrayForGQLModule($value);
             }
             // TODO: Handle cases where a non-string-convertible object is added to the arguments
             $constraintsString .= $name . ': ' . $value;

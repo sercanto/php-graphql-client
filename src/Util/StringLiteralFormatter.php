@@ -48,7 +48,7 @@ class StringLiteralFormatter
      *
      * @return string
      */
-    public static function formatArrayForGQLQuery(array $array): string
+    public static function formatArrayForGQLModule(array $array): string
     {
         $arrString = '[';
         $first = true;
