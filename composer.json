@@ -1,5 +1,5 @@
 {
-    "name": "sercanto/php-graphql-client",
+    "name": "gmostafa/php-graphql-client",
     "description": "GraphQL client and query builder.",
     "type": "library",
     "license": "MIT",
