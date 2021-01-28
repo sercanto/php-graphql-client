@@ -21,8 +21,8 @@ trait FieldTrait
      */
     public function setSelectionSet(array $selectionSet)
     {
-        $nonStringsFields = array_filter($selectionSet, function($element) {
-            return !is_string($element) && !$element instanceof Query && !$element instanceof InlineFragment;
+        $nonStringsFields = array_filter($selectionSet, function ($element) {
+            return !is_string($element) && !$element instanceof Query && !$element instanceof Mutation && !$element instanceof InlineFragment;
         });
         if (!empty($nonStringsFields)) {
             throw new InvalidSelectionException(
@@ -56,7 +56,7 @@ trait FieldTrait
             }
 
             // If query is included in attributes set as a nested query
-            if ($attribute instanceof Query) {
+            if ($attribute instanceof Query || $attribute instanceof Mutation) {
                 $attribute->setAsNested();
             }
 
